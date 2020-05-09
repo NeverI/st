@@ -1,0 +1,7 @@
+#!/bin/sh
+
+words=$( tr -d "\n" | tr " " "\n" | grep -e ".\{4,\}" --color=never | awk '!x[$0]++' )
+
+[ -z "$words" ] && exit
+
+echo "$words" | dmenu | tr -d "\n" | xclip -selection clipboard
