@@ -12,4 +12,6 @@ urls="$(sed 's/.*│//g' | tr -d '\n' |
 
 chosen="$(echo "$urls" | dmenu -i -n -p 'Which url?')"
 
+[ -z "$chosen" ] && exit
+
 setsid xdg-open "$chosen" >/dev/null 2>&1 &
