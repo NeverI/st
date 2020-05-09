@@ -42,11 +42,11 @@ dist: clean
 
 install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f st st-urlhandler st-copyword st-output-edit $(DESTDIR)$(PREFIX)/bin
+	cp -f st st-urlhandler st-copyword st-outputedit $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-urlhandler
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyword
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-output-edit
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-outputedit
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
@@ -57,7 +57,7 @@ uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-urlhandler
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-copyword
-	rm -f $(DESTDIR)$(PREFIX)/bin/st-output-edit
+	rm -f $(DESTDIR)$(PREFIX)/bin/st-outputedit
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
 
 .PHONY: all options clean dist install uninstall

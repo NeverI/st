@@ -174,7 +174,7 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (Mod1Mask|ControlMask)
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler", "externalpipe", NULL };
-static char *outputedit[] = { "/bin/sh", "-c", "st-output-edit", "externalpipe", NULL };
+static char *outputedit[] = { "/bin/sh", "-c", "st-outputedit", "externalpipe", NULL };
 static char *copyword[] = { "/bin/sh", "-c", "st-copyword", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
