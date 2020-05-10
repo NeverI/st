@@ -46,7 +46,6 @@ int allowaltscreen = 1;
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;
 static unsigned int actionfps = 30;
-float alpha = 0.8;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -84,6 +83,8 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 4;
+
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -192,8 +193,12 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_i,           invert,         { }       },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
+	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_p,           externalpipe,   {.v = openurlcmd } },
 	{ TERMMOD,              XK_o,           externalpipe,   {.v = outputedit } },
 	{ TERMMOD,              XK_m,           externalpipe,   {.v = copyword } },
